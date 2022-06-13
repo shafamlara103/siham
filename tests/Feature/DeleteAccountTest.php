@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace Tests\Feature;
 
@@ -9,7 +9,7 @@ use Laravel\Jetstream\Http\Livewire\DeleteUserForm;
 use Livewire\Livewire;
 use Tests\TestCase;
 
-class DeleteAccountTest extends TestCase
+final class DeleteAccountTest extends TestCase
 {
     use RefreshDatabase;
 

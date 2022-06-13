@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace Tests\Feature;
 
@@ -9,7 +9,7 @@ use Laravel\Jetstream\Http\Livewire\ApiTokenManager;
 use Livewire\Livewire;
 use Tests\TestCase;
 
-class CreateApiTokenTest extends TestCase
+final class CreateApiTokenTest extends TestCase
 {
     use RefreshDatabase;
 
@@ -32,7 +32,7 @@ class CreateApiTokenTest extends TestCase
                     ->call('createApiToken');
 
         $this->assertCount(1, $user->fresh()->tokens);
-        $this->assertEquals('Test Token', $user->fresh()->tokens->first()->name);
+        $this->assertSame('Test Token', $user->fresh()->tokens->first()->name);
         $this->assertTrue($user->fresh()->tokens->first()->can('read'));
         $this->assertFalse($user->fresh()->tokens->first()->can('delete'));
     }

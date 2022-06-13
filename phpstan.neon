@@ -1,0 +1,21 @@
+includes:
+    - ./vendor/nunomaduro/larastan/extension.neon
+parameters:
+    paths:
+        - app
+        - bootstrap
+        - config
+    # The level 9 is the highest level
+    level: 6
+    excludePaths:
+        - ./*/*/FileToBeExcluded.php
+    checkMissingIterableValueType: false
+    checkGenericClassInNonGenericObjectType: false
+    checkOctaneCompatibility: true
+    checkModelProperties: true
+services:
+    -
+        class: Vural\LarastanStrictRules\Rules\NoDynamicWhereRule
+        tags:
+            - phpstan.rules.rule
+

@@ -2,23 +2,57 @@
     "name": "laravel/laravel",
     "type": "project",
     "description": "The Laravel Framework.",
-    "keywords": ["framework", "laravel"],
+    "keywords": [
+        "framework",
+        "laravel"
+    ],
     "license": "MIT",
     "require": {
         "php": "^8.0.2",
+        "ably/ably-php": "^1.1",
+        "brianium/paratest": "^6.4",
+        "doctrine/dbal": "^3.3",
+        "doctrine/orm": "^2.12",
+        "garygreen/pretty-routes": "^1.0",
         "guzzlehttp/guzzle": "^7.2",
+        "justinbyrne/extra-artisan-commands": "^1.2",
         "laravel/framework": "^9.11",
         "laravel/jetstream": "^2.8",
         "laravel/sanctum": "^2.14.1",
         "laravel/tinker": "^2.7",
-        "livewire/livewire": "^2.5"
+        "league/flysystem-aws-s3-v3": "^3.0",
+        "league/flysystem-ftp": "^3.0",
+        "league/flysystem-sftp-v3": "^3.0",
+        "livewire/livewire": "^2.5",
+        "nyholm/psr7": "^1.5",
+        "pda/pheanstalk": "^4.0",
+        "pusher/pusher-php-server": "^7.0",
+        "spatie/laravel-medialibrary": "^10.0.0",
+        "spatie/laravel-permission": "^5.5",
+        "symfony/cache": "^6.1",
+        "symfony/filesystem": "^6.1",
+        "symfony/http-client": "^6.1",
+        "symfony/mailgun-mailer": "^6.1",
+        "symfony/postmark-mailer": "^6.1",
+        "symfony/psr-http-message-bridge": "^2.1"
     },
     "require-dev": {
+        "barryvdh/laravel-debugbar": "^3.6",
+        "barryvdh/laravel-ide-helper": "^2.12",
+        "canvural/larastan-strict-rules": "^2.0",
+        "ergebnis/phpstan-rules": "^1.0",
         "fakerphp/faker": "^1.9.1",
+        "friendsofphp/php-cs-fixer": "^3.8",
         "laravel/sail": "^1.0.1",
         "mockery/mockery": "^1.4.4",
         "nunomaduro/collision": "^6.1",
+        "nunomaduro/larastan": "^2.1",
+        "orchestra/testbench": "^7.5",
+        "pestphp/pest": "^1.21",
+        "pestphp/pest-plugin-laravel": "^1.2",
+        "pestphp/pest-plugin-livewire": "^1.0",
         "phpunit/phpunit": "^9.5.10",
+        "rector/rector": "^0.13.4",
         "spatie/laravel-ignition": "^1.0"
     },
     "autoload": {
@@ -39,7 +73,10 @@
             "@php artisan package:discover --ansi"
         ],
         "post-update-cmd": [
-            "@php artisan vendor:publish --tag=laravel-assets --ansi --force"
+            "@php artisan vendor:publish --tag=laravel-assets --ansi --force",
+            "@php artisan ide-helper:generate",
+            "@php artisan ide-helper:models",
+            "@php artisan ide-helper:meta"
         ],
         "post-root-package-install": [
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
@@ -56,7 +93,10 @@
     "config": {
         "optimize-autoloader": true,
         "preferred-install": "dist",
-        "sort-packages": true
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
     },
     "minimum-stability": "dev",
     "prefer-stable": true

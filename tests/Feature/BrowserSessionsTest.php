@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace Tests\Feature;
 
@@ -8,7 +8,7 @@ use Laravel\Jetstream\Http\Livewire\LogoutOtherBrowserSessionsForm;
 use Livewire\Livewire;
 use Tests\TestCase;
 
-class BrowserSessionsTest extends TestCase
+final class BrowserSessionsTest extends TestCase
 {
     use RefreshDatabase;
 

@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace Tests\Feature;
 
@@ -9,7 +9,7 @@ use Laravel\Jetstream\Http\Livewire\UpdatePasswordForm;
 use Livewire\Livewire;
 use Tests\TestCase;
 
-class UpdatePasswordTest extends TestCase
+final class UpdatePasswordTest extends TestCase
 {
     use RefreshDatabase;
 

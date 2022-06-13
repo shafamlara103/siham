@@ -1,7 +1,16 @@
-import './bootstrap';
-
+require('./bootstrap');
 import Alpine from 'alpinejs';
-
+import morph from '@alpinejs/morph';
+import collapse from '@alpinejs/collapse';
+import focus from '@alpinejs/focus';
+import intersect from '@alpinejs/intersect';
+import persist from '@alpinejs/persist';
+import mask from '@alpinejs/mask';
 window.Alpine = Alpine;
-
+Alpine.plugin(morph);
+Alpine.plugin(collapse);
+Alpine.plugin(focus);
+Alpine.plugin(intersect);
+Alpine.plugin(persist);
+Alpine.plugin(mask);
 Alpine.start();

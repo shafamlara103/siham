@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace Tests\Feature;
 
@@ -8,7 +8,7 @@ use Laravel\Jetstream\Http\Livewire\TwoFactorAuthenticationForm;
 use Livewire\Livewire;
 use Tests\TestCase;
 
-class TwoFactorAuthenticationSettingsTest extends TestCase
+final class TwoFactorAuthenticationSettingsTest extends TestCase
 {
     use RefreshDatabase;
 
